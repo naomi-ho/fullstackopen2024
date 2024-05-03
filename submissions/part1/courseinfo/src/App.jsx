@@ -1,20 +1,14 @@
 // Header takes care of rendering the name of the course
 const Header = (props) => {
-  return (
-    <div>
-      <h1>{props.course}</h1>
-    </div>
-  );
+  return <h1>{props.course}</h1>;
 };
 
 // Part renders the name and number of exercises of one part
 const Part = (props) => {
   return (
-    <div>
-      <p>
-        {props.part} {props.exercise}
-      </p>
-    </div>
+    <p>
+      {props.part} {props.exercise}
+    </p>
   );
 };
 
@@ -31,11 +25,7 @@ const Content = (props) => {
 
 // Total renders the total number of exercises
 const Total = (props) => {
-  return (
-    <div>
-      <p>Number of exercises {props.exercise}</p>
-    </div>
-  );
+  return <p>Number of exercises {props.exercise}</p>;
 };
 
 const App = () => {
