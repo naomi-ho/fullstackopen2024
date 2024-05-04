@@ -1,14 +1,19 @@
 // the function defining the component has a parameter props (props pass data to components)
 // the parameter receives and object, which has fields corresponding to all the "props" the user of the component defines
 // if the value of a prop is achieved using JS, it must be wrapped with curly braces
-const Hello = (props) => {
-  console.log(props);
+
+// props passed into the component are now directly destructured into variables, name and age
+const Hello = ({ name, age }) => {
+  // helper function is defined inside another function that defines the component's behaviour
+  const bornYear = () => new Date().getFullYear() - age;
+
+  // content of a React component usually needs to contain 1 root element (e.g. div)
   return (
-    // content of a React component usually needs to contain 1 root element (e.g. div)
     <div>
       <p>
-        Hello {props.name}, you are {props.age} years old
+        Hello {name}, you are {age} years old
       </p>
+      <p>So you were probably born in {bornYear()}</p>
     </div>
   );
 };
