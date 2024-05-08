@@ -8,26 +8,15 @@ const Button = ({ handleClick, text }) => {
   return <button onClick={handleClick}>{text}</button>;
 };
 
-const Display = (props) => {
+const Statistics = (props) => {
   return (
     <div>
-      {props.text} {props.value}
-    </div>
-  );
-};
-
-const Total = (props) => {
-  return <div>all {props.total}</div>;
-};
-
-const Average = (props) => {
-  return <div>average {props.average}</div>;
-};
-
-const Percentage = (props) => {
-  return (
-    <div>
-      positive {props.percentage} {props.text}
+      <div>good {props.good}</div>
+      <div>neutral {props.neutral}</div>
+      <div>bad {props.bad}</div>
+      <div>all {props.total}</div>
+      <div>average {props.average}</div>
+      <div>positive {props.percentage} %</div>
     </div>
   );
 };
@@ -81,12 +70,14 @@ const App = () => {
       <Button handleClick={handleNeutralClick} text="neutral" />
       <Button handleClick={handleBadClick} text="bad" />
       <Header heading={"statistics"} />
-      <Display text="good" value={good} />
-      <Display text="neutral" value={neutral} />
-      <Display text="bad" value={bad} />
-      <Total total={good + neutral + bad} />
-      <Average average={average} />
-      <Percentage percentage={percentage} text="%" />
+      <Statistics
+        good={good}
+        neutral={neutral}
+        bad={bad}
+        total={good + neutral + bad}
+        average={average}
+        percentage={percentage}
+      />
     </div>
   );
 };
