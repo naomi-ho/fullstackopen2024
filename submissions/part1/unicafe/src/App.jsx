@@ -70,14 +70,19 @@ const App = () => {
       <Button handleClick={handleNeutralClick} text="neutral" />
       <Button handleClick={handleBadClick} text="bad" />
       <Header heading={"statistics"} />
-      <Statistics
-        good={good}
-        neutral={neutral}
-        bad={bad}
-        total={good + neutral + bad}
-        average={average}
-        percentage={percentage}
-      />
+
+      {count > 0 ? (
+        <Statistics
+          good={good}
+          neutral={neutral}
+          bad={bad}
+          total={good + neutral + bad}
+          average={average}
+          percentage={percentage}
+        />
+      ) : (
+        <div>No feedback given</div>
+      )}
     </div>
   );
 };
